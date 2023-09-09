@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+    color: aliceblue;
+    background-image: url("/static/pictures/bg.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.name {
+    padding: 15px 20px 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    opacity: .7;
+    text-align: center;
+}
+
+.detail {
+    margin: 30px;
+}
+
+.about-section {
+    margin: 10%;
+    padding: 50px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: white;
+    opacity: .7;
+    color: black;
+
+}
+
+.post {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    border-radius: 50px;
+    text-align: center;
+    background-color: white;
+    opacity: .7;
+    color: black;
+}
+
+.comment {
+    margin-top: 2%;
+    width: 30%;
+    border-radius: 30px;
+}
+
+.form {
+    padding: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    border-radius: 50px;
+    text-align: center;
+    background-color: white;
+    opacity: .7;
+    color: black;
+}

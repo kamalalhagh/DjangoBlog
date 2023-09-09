@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="form">
+        <h2>Do you want to delete This post?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <a class="btn btn-primary" href="{% url 'detail' post.pk %}">
+                Go Back
+            </a>
+            <button class="btn btn-danger" type="submit">Confirm</button>
+        </form>
+
+    </div>
+{% endblock content %}

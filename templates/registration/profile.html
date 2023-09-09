@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form">
+        <h1 style="text-align: left">Your Details:
+        </h1>
+        <div>
+            User Name : {{ user.username }}
+            <br>
+            <div style="font-size: x-large">
+                First name : {{ user.first_name }}
+                <br>
+                Last name : {{ user.last_name }}
+
+
+            </div>
+            <br>
+            Email : {{ user.email }}
+            <br>
+            Age : {{ user.age }}
+            <br>
+            Phone number : {{ user.number }}
+            <br>
+            <br>
+            <a class="btn btn-primary" href="{% url 'password_change' %}">Change
+                Password</a>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

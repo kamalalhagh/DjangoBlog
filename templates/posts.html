@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="card post">
+            <div class="card-body">
+                <h1 class="card-title">{{ post.title }}</h1>
+                <p class="card-text" style="text-align: left">{{ post.body|slice:":500"|safe }} ...</p>
+                <p class="card-subtitle mb-2 text-muted" style="font-weight: lighter">{{ post.date }}
+                    by {{ post.author }}</p>
+                <a href="{% url 'detail' post.pk %}" class="btn btn-primary">more</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}

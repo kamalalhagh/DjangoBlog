@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card post">
+        <div class="card-header">
+            <h1>{{ post.title }}</h1>
+        </div>
+        <div class="card-body" style="text-align: left">
+            <p class="card-text">{{ post.body|safe }}</p>
+            <p class="card-subtitle mb-2 text-muted" style="font-weight: lighter">{{ post.date }}
+                by {{ post.author }}</p>
+            {% ifequal post.author|slugify user.username|slugify %}
+                <a href="{% url 'edit' post.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete' post.pk %}" class="btn btn-danger">Delete</a>
+            {% endifequal %}
+            <br>
+            <hr>
+            <br>
+            <div style="text-align: left">
+                <h4> Comments : </h4>
+                {% for comment in post.comments.all %}
+
+                    <div class="card comment">
+                        <div class="card-header">
+                            <b>{{ comment.author }}</b> at: <i style="font-weight: lighter">{{ comment.time }}</i>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ comment }}</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+                <div class="post">
+                    <a href="{% url 'blog' %}" class="btn btn-success">Go back</a>
+                    <a href="{% url 'add_comment' %}" class="btn btn-info">Add comment</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock content %}
